@@ -1,0 +1,117 @@
+/* General Dark Theme Settings */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 5rem auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #bb86fc;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 96%;
+    padding: 10px;
+    background-color: #2e2e2e;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #e0e0e0;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-button {
+    padding: 15px;
+    background-color: #03dac5;
+    border: none;
+    color: #121212;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.7s ease, color 0.7s ease, text-shadow 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
+}
+
+.submit-button:hover {
+    background-color: #06736a;
+    color: #f1ecec;
+    text-shadow:
+            0 0 5px #b0b659,
+            0 0 10px #5981b6,
+            0 0 15px #0b39e1,
+            0 0 20px #8534db,
+            0 0 35px #d000ff,
+            0 0 40px #34dbc2;
+
+    box-shadow: 0px 0px 20px #fff;
+
+}
+
+.back-button {
+    display: block;
+    margin: 20px 0;
+    padding: 12px;
+    text-align: center;
+    background-color: #bb86fc;
+    color: #121212;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.7s ease, text-shadow 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: #8534db;
+    color: #ccc;
+    text-shadow:
+            0 0 5px #b0b659,
+            0 0 10px #5981b6,
+            0 0 15px #0b39e1,
+            0 0 20px #8534db,
+            0 0 35px #d000ff,
+            0 0 40px #34dbc2;
+
+    box-shadow:
+            0 0 5px rgb(255, 183, 165),
+            0 0 10px #0c4c42,
+            0 0 15px #e3dfdb,
+            0 0 20px #b3cfb1,
+            0 0 35px #c900ff,
+            0 0 40px #8e0728;
+}

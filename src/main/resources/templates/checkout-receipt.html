@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Receipt</title>
+    <link rel="stylesheet" th:href="@{/css/receipt.css}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #f2f2f2; /* Light text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .receipt-container {
+            text-align: center;
+            background-color: #333;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1, h2, h3 {
+            color: #f2f2f2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #555;
+        }
+
+        th {
+            background-color: #444;
+        }
+
+        td {
+            background-color: #555;
+        }
+
+        a {
+            color: #4caf50; /* Green color for the link */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #81c784;
+        }
+
+        .link-back {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #81c784;
+        }
+    </style>
+</head>
+<body>
+<div class="receipt-container">
+    <h1>Checkout Receipt</h1>
+    <p>Thank you, <span th:text="${shopper.name}">Shopper Name</span>, for your purchase!</p>
+
+    <h2>Your Cart</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${cart.items}">
+            <td th:text="${item.product.make} + ' ' + ${item.product.model} + ' ' + ${item.product.trim}">Product</td>
+            <td th:text="${item.quantity}">Quantity</td>
+            <td th:text="${item.price}">Price</td>
+            <td th:text="${item.getTotalPrice()}">Total</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3>Total Price: <span th:text="${totalPrice}">Total Price</span></h3>
+
+    <!-- Print Receipt Button -->
+    <button onclick="window.print()">Print Receipt</button>
+
+    <!-- Link back to the productspage -->
+    <div class="link-back">
+        <a href="/productspage">Return to Products</a>
+    </div>
+</div>
+</body>
+</html>

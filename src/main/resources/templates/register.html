@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" th:href="@{/css/register.css}" />
+    <style>
+        .error-message {
+            color: #f0ad4e;
+            font-size: 12px;
+            margin-top: -15px;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="image-section"></div>
+    <div class="form-section">
+        <h1>Sign Up For An Account</h1>
+        <form id="signupForm" th:action="@{/register}" th:object="${shopper}" method="post">
+            <!-- Name Field -->
+            <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    th:field="*{name}"
+                    placeholder="Full Name"
+                    required
+            />
+            <div class="error-message" id="nameError">Please enter your full name.</div>
+
+            <!-- Email Field -->
+            <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    th:field="*{username}"
+                    placeholder="Email Address"
+                    required
+            />
+            <div class="error-message" id="emailError">Please enter a valid email address.</div>
+
+            <!-- Phone Number Field -->
+            <input
+                    type="tel"
+                    id="tel"
+                    name="tel"
+                    placeholder="Phone number"
+            />
+            <div class="error-message" id="telError">Please enter a valid phone number.</div>
+
+            <!-- Password Field -->
+            <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    th:field="*{password}"
+                    placeholder="Password"
+                    required
+            />
+            <div class="error-message" id="passwordError">Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.</div>
+
+            <!-- Referral Field -->
+            <select id="refer" name="refer" required>
+                <option value="" disabled selected>
+                    How did you here about us
+                </option>
+                <option value="facebook">facebook</option>
+                <option value="google">google</option>
+                <option value="linkedin">linkedin</option>
+            </select>
+            <div class="error-message" id="referError">Please select how you heard about us.</div>
+
+            <!-- Preferred Contact Method -->
+            <fieldset class="dining-space">
+                <legend>Preferred Contact Method</legend>
+                <label>
+                    <input type="radio" name="contact" value="email" />
+                    Email
+                </label>
+                <label>
+                    <input type="radio" name="contact" value="phone" />
+                    Phone
+                </label>
+            </fieldset>
+
+            <!-- Terms and Conditions -->
+            <label>
+                <input type="checkbox" id="terms" name="terms" required />
+                I agree to the terms and conditions
+            </label>
+            <div class="error-message" id="termsError" style="margin-top:15px">You must agree to the terms and conditions.</div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="book-btn">Register</button>
+        </form>
+        <p>Already a member?... <a th:href="@{/login}">Sign in</a></p>
+    </div>
+</div>
+
+<script src="../js/validation.js"></script>
+</body>
+</html>

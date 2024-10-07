@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" th:href="@{/css/cart.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Your Cart</h1>
+
+    <!-- Check if the cart has items -->
+    <div th:if="${cart.items.size()} > 0">
+        <table>
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${cart.items}">
+                <td th:text="${item.product.make} + ' ' + ${item.product.model} + ' ' + ${item.product.trim}">Product</td>
+                <td>
+                    <form th:action="@{/cart/update}" method="post">
+                        <input type="hidden" name="productId" th:value="${item.product.id}" />
+                        <input type="number" name="quantity" th:value="${item.quantity}" min="1" />
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
+                <td th:text="${item.price}">Price</td>
+                <td th:text="${item.getTotalPrice()}">Total</td>
+                <td>
+                    <form th:action="@{/cart/remove/{productId}(productId=${item.product.id})}" method="post">
+                        <button type="submit">Remove</button>
+                    </form>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <!-- Cart Summary Section -->
+        <div class="cart-summary">
+            <h2>Cart Summary</h2>
+            <p>Total Price: <span th:text="${cart.totalPrice}">Total Price</span></p>
+            <p>Estimated Tax: <span th:text="${cart.totalPrice * 0.10}">Estimated Tax</span></p>
+        </div>
+
+        <!-- Checkout Button -->
+        <div class="checkout-section">
+            <form th:action="@{/cart/checkout}" method="post">
+                <button type="submit">Checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- If the cart is empty -->
+    <div th:if="${cart.items.size()} == 0">
+        <p>Your cart is currently empty.</p>
+    </div>
+
+    <a href="/productspage" class="continue-shopping-button">Continue Shopping</a>
+</div>
+</body>
+</html>

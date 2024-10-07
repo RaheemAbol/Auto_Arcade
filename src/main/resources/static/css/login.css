@@ -1,0 +1,154 @@
+body {
+    background: url("../images/offroad2.jpg") no-repeat;
+    background-size: cover;
+}
+
+
+
+.navbar{
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 98%;
+    background-image: linear-gradient(
+            rgb(8, 3, 0) 0%,
+            rgba(43, 19, 1, 0.678) 50%,
+            rgba(33, 15, 1, 0) 100%
+    );
+    padding: 1em 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-logo {
+    margin-right: auto;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+    -webkit-animation: glowing-text 1s ease-in-out infinite alternate;
+    -moz-animation: glowing-text 1s ease-in-out infinite alternate;
+    animation: glowing-text 1s ease-in-out infinite alternate;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2em;
+}
+
+@-webkit-keyframes glowing-text {
+    0% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2e00e6,
+        0 0 40px #6300e6, 0 0 50px #13e600, 0 0 60px #0073e6, 0 0 70px #e600ca;
+    }
+
+    100% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ec6409, 0 0 40px #ad0e0e,
+        0 0 50px #9fd712, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-hidden {
+    top: -250px;
+}
+h1 {
+    font-family: "Fascinate Inline", system-ui;
+    text-align: center;
+    background: linear-gradient(
+            to right,
+            #f39521,
+            #ff6b08,
+            #cc2e0a,
+            #ee5b44
+    );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+form {
+    height: 350px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: rgb(255, 243, 224);
+}
+input {
+    height: 30px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 40px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 1rem;
+}
+
+span {
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 45px;
+    margin-left: 45px;
+    font-size: 16px;
+    font-family: "Fascinate Inline", system-ui;
+    background: linear-gradient(
+            to right,
+            #f39521,
+            #ff6b08,
+            #cc2e0a,
+            #ee5b44
+    );
+}
+
+button {
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 45px;
+    margin-left: 45px;
+    font-size: 16px;
+    font-family: "Fascinate Inline", system-ui;
+    background: linear-gradient(
+            to right,
+            #f39521,
+            #ff6b08,
+            #cc2e0a,
+            #ee5b44
+    );
+}
+button:hover {
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: text-shadow 0.3s ease;
+}
+
+a:hover {
+    text-shadow: 0 0 10px white, 0 0 20px white;
+}

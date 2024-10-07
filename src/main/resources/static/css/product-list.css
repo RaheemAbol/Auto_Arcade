@@ -1,0 +1,124 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Product Grid Styling */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-details h2 {
+    color: #bb86fc;
+    margin-bottom: 10px;
+}
+
+.product-details p {
+    color: #ccc;
+}
+
+/* Action Buttons */
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-button, .delete-button {
+    background-color: #03dac5;
+    color: #121212;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #00c4b4;
+    color: white;
+    transform: scale(1.1);
+}
+
+.delete-button {
+    background-color: #cf6679;
+}
+
+.delete-button:hover {
+    background-color: #b25664;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Add Button Styling */
+.add-button {
+    display: block;
+    margin: 40px auto;
+    background-color: #bb86fc;
+    color: #121212;
+    padding: 15px 25px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.5s ease, color 0.5s ease, text-shadow 0.5s ease-in-out;
+}
+
+.add-button:hover {
+    background-color: #8534db;
+    color: #ccc;
+    text-shadow: 0 0 5px #b0b659, 0 0 10px #5981b6, 0 0 15px #0b39e1, 0 0 20px #8534db, 0 0 35px #d000ff, 0 0 40px #34dbc2;
+}
+
+/* Home Button Styling */
+.home-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #86cafc;
+    color: #121212;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.5s ease-in-out;
+}
+
+.home-button:hover {
+    background-color: #58b3db;
+    color: white;
+    text-shadow: 0 0 5px #c9ffc7, 0 0 10px #86cafc, 0 0 15px #58db34;
+}

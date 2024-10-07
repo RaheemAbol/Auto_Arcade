@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+
+    <link rel="stylesheet" th:href="@{/css/products.css}" />
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-logo">Auto Arcade</div>
+    <ul>
+        <li><a th:href="@{/register}">Sign Up</a></li>
+        <li><a th:href="@{/login}">Login</a></li>
+        <li><a th:href="@{/productspage}">Products</a></li>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/cart}">Cart</a></li>
+        <li><a th:href="@{/products}">Admin</a></li>
+    </ul>
+</div>
+
+
+<!-- Filtering Form -->
+<form style="margin-left: 7rem;" th:action="@{/productspage}" method="get" class="filter-form">
+    <label for="style">Filter by Style:</label>
+    <select name="style" id="style" onchange="this.form.submit()">
+        <option value="">All</option>
+        <option value="Off-Road" th:selected="${param.style == 'Off-Road'}">Off-Road</option>
+        <option value="Sport" th:selected="${param.style == 'Sport'}">Sport</option>
+        <option value="Pro" th:selected="${param.style == 'Pro'}">Pro</option>
+    </select>
+</form>
+
+<div class="grid-container">
+    <div class="card" th:each="product : ${products}">
+        <div class="image-container">
+            <img th:src="@{/images/{img}(img=${product.imgUrl})}" th:alt="${product.make + ' ' + product.model}" />
+        </div>
+        <div class="details">
+            <h3 th:text="${product.make + ' ' + product.model + ' - ' + product.trim + ' - $' + product.price}">Vehicle</h3>
+        </div>
+        <form th:action="@{/cart/add}" method="post">
+            <input type="hidden" name="productId" th:value="${product.id}" />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
+
+
+<script type="module" src="../js/navbar.js"></script>
+</body>
+</html>

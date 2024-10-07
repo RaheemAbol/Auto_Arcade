@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Ga+Maamli&display=swap"
+            rel="stylesheet"
+    />
+
+    <link rel="stylesheet" th:href="@{/css/home.css}" />
+</head>
+<body>
+<div id="mainstay">
+    <div class="navbar">
+        <div class="navbar-logo">Auto Arcade</div>
+        <ul>
+            <li><a th:href="@{/register}">Sign Up</a></li>
+            <li><a th:href="@{/login}">Login</a></li>
+            <li><a th:href="@{/productspage}">Products</a></li>
+            <li><a th:href="@{/cart}">Cart</a></li>
+            <li><a th:href="@{/products}">Admin</a></li>
+            <!-- Conditionally show Logout button if user is authenticated -->
+            <li>
+                <form th:action="@{/logout}" method="post" style="display: inline;">
+                    <button id="logout" type="submit">Logout</button>
+                </form>
+            </li>
+
+        </ul>
+    </div>
+    <div id="animation-container">
+        Coming soon...
+        <div id="flip">
+            <div><div>Miami,FL</div></div>
+            <div><div>Denver,CO</div></div>
+            <div><div>Austin,TX</div></div>
+        </div>
+    </div>
+</div>
+
+<div class="grid-container">
+    <header>
+        <p>Events</p>
+    </header>
+    <main>Welcome to your Racing Destination</main>
+    <section id="classics">Classics</section>
+    <section id="newera"><a th:href="@{/productspage(style='pro')}">Pro</a></section>
+    <section id="offroad"><a th:href="@{/productspage(style='off-road')}">Off-road</a></section>
+    <section id="racing"><a th:href="@{/productspage(style='sport')}">Racing</a></section>
+    <div class="wheels">Models</div>
+
+    <footer>
+        <div class="socials">
+            <strong>Follow us on: </strong>
+            <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+            <a href="https://www.twitter.com" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com" class="fa fa-linkedin"></a>
+        </div>
+        <p>
+            Copyright &copy; 2023-2024 Auto Arcade, inc. - All rights reserved.
+        </p>
+    </footer>
+</div>
+</body>
+</html>
