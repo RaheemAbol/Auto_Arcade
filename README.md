@@ -5,6 +5,7 @@
 Welcome to **Auto Arcade**! This is a comprehensive Spring Boot application that allows users to manage automotive products, add products to their shopping cart, and generate checkout receipts. Auto Arcade provides a smooth shopping experience with essential features such as viewing products by style, updating product quantities, removing items from the cart, and printing checkout receipts. The application also implements role-based access with Shopper and Admin users.
 
 ## Table of Contents
+- [Download and run starter.sql](https://raw.githubusercontent.com/RaheemAbol/Auto_Arcade/refs/heads/master/starter.sql)
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Technologies Used](#technologies-used)
